@@ -1,0 +1,26 @@
+CREATE TABLE equipe (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    taille INT,
+    couleur VARCHAR(50)
+);
+
+INSERT INTO equipe (nom, taille, couleur)
+VALUES ('PSG', 10, 'Bleu et Rouge');
+
+CREATE TABLE joueur (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    placement VARCHAR(50),
+    numero INT,
+    equipe_id INT,
+    FOREIGN KEY (equipe_id) REFERENCES equipe(id)
+);
+
+  INSERT INTO joueur (nom, placement, numero, equipe_id) VALUES
+('Mbappé', 'Attaquant', 7, 1),
+('Hakimi', 'Défenseur', 2, 1),
+('Dembélé', 'Ailier', 10, 1),
+('Neymar', 'Attaquant', 10, 1),
+('Doué', 'Ailier', 14, 1),
+('Chancla', 'Gardien', 99, 1);
